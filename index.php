@@ -32,7 +32,7 @@ $hero = $photos ? 'photo.php?id=' . (int)$photos[0] : '';
 :root{--ink:#f7f0e2;--deep:#e8dcc4;--gold:#78571f;--gold-soft:#62471c;--ivory:#24251f;--mute:#484a40}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:linear-gradient(rgba(244,237,223,.62),rgba(244,237,223,.78)) fixed,<?= $hero ? "url('" . e($hero) . "') center/cover fixed" : 'radial-gradient(circle at 50% 30%,#f4eddf,#e8dcc4 70%) fixed' ?>;color:var(--ivory);font-family:'Jost',sans-serif;font-weight:400;line-height:1.7}
+body{background:linear-gradient(rgba(244,237,223,.62),rgba(244,237,223,.78)) fixed,<?= $hero ? "url('" . e($hero) . "') center/cover fixed" : 'radial-gradient(circle at 50% 30%,#f4eddf,#e8dcc4 70%) fixed' ?>;color:var(--ivory);font-family:'Jost',sans-serif;font-weight:400;line-height:1.7;text-shadow:0 1px 2px rgba(0,0,0,.25)}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
 .hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem;position:relative;background:transparent}
 .frame{border:1px solid var(--gold);padding:4rem 3rem;max-width:760px;position:relative;outline:1px solid rgba(120,87,31,.45);outline-offset:10px;background:rgba(250,246,236,.95);backdrop-filter:blur(3px)}
