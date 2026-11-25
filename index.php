@@ -29,14 +29,14 @@ $hero = $photos ? 'photo.php?id=' . (int)$photos[0] : '';
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0e2620;--deep:#091a16;--gold:#c8a96a;--gold-soft:#e3d2a6;--ivory:#f4efe4;--mute:#b9c2bb}
+:root{--ink:#f0e6d2;--deep:#e8dcc4;--gold:#a68a50;--gold-soft:#7d6337;--ivory:#2f332b;--mute:#646758}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{background:var(--deep);color:var(--ivory);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
 .hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem;position:relative;
- background:linear-gradient(rgba(9,26,22,.55),rgba(9,26,22,.9)),<?= $hero ? "url('" . e($hero) . "') center/cover" : 'radial-gradient(circle at 50% 30%,#17413a,#091a16 70%)' ?>}
-.frame{border:1px solid var(--gold);padding:4rem 3rem;max-width:760px;position:relative;outline:1px solid rgba(200,169,106,.35);outline-offset:10px;background:rgba(9,26,22,.35);backdrop-filter:blur(3px)}
+ background:linear-gradient(rgba(232,220,196,.35),rgba(232,220,196,.75)),<?= $hero ? "url('" . e($hero) . "') center/cover" : 'radial-gradient(circle at 50% 30%,#f4eddf,#e8dcc4 70%)' ?>;background-attachment:fixed}
+.frame{border:1px solid var(--gold);padding:4rem 3rem;max-width:760px;position:relative;outline:1px solid rgba(166,138,80,.35);outline-offset:10px;background:rgba(244,237,223,.72);backdrop-filter:blur(3px)}
 .hero .msg{max-width:460px;margin:0 auto 1.6rem;color:var(--mute);font-size:.95rem;letter-spacing:.04em}
 .names{font-size:clamp(3rem,9vw,6.4rem);line-height:1.05;color:var(--gold-soft);font-style:italic}
 .names span{display:block;font-size:.4em;font-style:normal;color:var(--gold);margin:.3em 0}
