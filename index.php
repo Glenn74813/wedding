@@ -32,10 +32,9 @@ $hero = $photos ? 'photo.php?id=' . (int)$photos[0] : '';
 :root{--ink:#f0e6d2;--deep:#e8dcc4;--gold:#a68a50;--gold-soft:#7d6337;--ivory:#2f332b;--mute:#646758}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--deep);color:var(--ivory);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7}
+body{background:linear-gradient(rgba(232,220,196,.35),rgba(232,220,196,.75)) fixed,<?= $hero ? "url('" . e($hero) . "') center/cover fixed" : 'radial-gradient(circle at 50% 30%,#f4eddf,#e8dcc4 70%) fixed' ?>;color:var(--ivory);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
-.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem;position:relative;
- background:linear-gradient(rgba(232,220,196,.35),rgba(232,220,196,.75)),<?= $hero ? "url('" . e($hero) . "') center/cover" : 'radial-gradient(circle at 50% 30%,#f4eddf,#e8dcc4 70%)' ?>;background-attachment:fixed}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem;position:relative;background:transparent}
 .frame{border:1px solid var(--gold);padding:4rem 3rem;max-width:760px;position:relative;outline:1px solid rgba(166,138,80,.35);outline-offset:10px;background:rgba(244,237,223,.72);backdrop-filter:blur(3px)}
 .hero .msg{max-width:460px;margin:0 auto 1.6rem;color:var(--mute);font-size:.95rem;letter-spacing:.04em}
 .names{font-size:clamp(3rem,9vw,6.4rem);line-height:1.05;color:var(--gold-soft);font-style:italic}
@@ -51,7 +50,7 @@ h2{font-size:clamp(2rem,5vw,3rem);color:var(--gold-soft);margin-bottom:1.5rem;fo
 .count small{color:var(--mute);letter-spacing:.15em}
 .gallery{columns:3 240px;column-gap:14px;margin-top:1rem}
 .gallery img{width:100%;margin-bottom:14px;display:block;border:1px solid rgba(200,169,106,.4);cursor:zoom-in}
-.alt{background:var(--ink);max-width:none}
+.alt{background:rgba(240,230,210,.82);max-width:none}
 .alt>div{max-width:560px;margin:0 auto}
 form{text-align:left;display:grid;gap:1.1rem}
 label{font-size:.85rem;color:var(--gold-soft);letter-spacing:.05em}
