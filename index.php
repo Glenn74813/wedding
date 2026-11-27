@@ -50,21 +50,22 @@ img{display:block;max-width:100%}
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:3rem 1.5rem;overflow:hidden;color:#fbf7ef;background:#2c2a25}
 .hero-bg{position:absolute;inset:-2%;background-size:cover;background-position:center;transform:scale(1.04);animation:drift 24s ease-in-out infinite alternate}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(28,25,20,.35) 0%,rgba(28,25,20,.62) 70%,rgba(28,25,20,.78) 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(24,21,17,.55) 0%,rgba(24,21,17,.68) 60%,rgba(24,21,17,.82) 100%)}
 .hero.plain{background:radial-gradient(circle at 50% 35%,#fffdf8,var(--linen) 75%);color:var(--ink)}
 .hero.plain::after{display:none}
-.frame{position:relative;z-index:1;max-width:720px;width:100%;padding:4.5rem 3rem;border:1px solid rgba(214,188,140,.7);outline:1px solid rgba(214,188,140,.3);outline-offset:12px}
+.frame{position:relative;z-index:1;max-width:720px;width:100%;padding:4.5rem 3rem;border:1px solid rgba(214,188,140,.7);outline:1px solid rgba(214,188,140,.3);outline-offset:12px;background:rgba(22,19,15,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);text-shadow:0 1px 14px rgba(0,0,0,.55)}
+.hero.plain .frame{background:none;-webkit-backdrop-filter:none;backdrop-filter:none;text-shadow:none}
 .hero.plain .frame{border-color:var(--gold);outline-color:var(--line)}
-.eyebrow{font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;color:#e3cfa6}
+.eyebrow{font-size:.74rem;font-weight:400;letter-spacing:.42em;text-transform:uppercase;color:#ecd9b3}
 .hero.plain .eyebrow{color:var(--gold-deep)}
-.hero .msg{max-width:440px;margin:1.4rem auto 2rem;font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.6;opacity:.92}
+.hero .msg{max-width:440px;margin:1.4rem auto 2rem;font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.6}
 .names{font-size:clamp(3.2rem,10vw,6.6rem);line-height:1;font-weight:300;letter-spacing:.01em}
 .names .amp{display:block;font-style:italic;font-size:.45em;color:#e3cfa6;margin:.25em 0 .2em}
 .hero.plain .names{color:var(--gold-deep)}
 .hero.plain .names .amp{color:var(--gold)}
 .when{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-top:2.4rem;font-size:.82rem;letter-spacing:.32em;text-transform:uppercase}
 .when i{display:block;width:40px;height:1px;background:currentColor;opacity:.55}
-.venue{margin-top:.7rem;font-family:var(--serif);font-size:1.15rem;letter-spacing:.06em;opacity:.85}
+.venue{margin-top:.7rem;font-family:var(--serif);font-size:1.15rem;letter-spacing:.06em;}
 .scroll{position:absolute;z-index:1;bottom:1.8rem;left:50%;transform:translateX(-50%);width:1px;height:46px;background:linear-gradient(currentColor,transparent);opacity:.6}
 
 /* ---------- Sections ---------- */
@@ -93,9 +94,10 @@ h2{font-size:clamp(2.2rem,5.5vw,3.2rem);color:var(--gold-deep);font-style:italic
 .card p{color:var(--soft);font-size:.95rem}
 
 /* Gallery */
-.gallery{columns:3 240px;column-gap:16px}
-.gallery figure{break-inside:avoid;margin-bottom:16px;overflow:hidden;background:var(--linen);cursor:zoom-in}
-.gallery img{width:100%;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
+/* Uniform tiles, auto-wrapped and centred, so any mix of photo sizes lines up evenly */
+.gallery{--gap:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap)}
+.gallery figure{flex:0 0 calc((100% - 2*var(--gap))/3);aspect-ratio:4/5;overflow:hidden;background:#fffdf9;border:1px solid var(--line);cursor:zoom-in}
+.gallery img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
 .gallery figure:hover img{transform:scale(1.035);filter:brightness(1.04)}
 
 /* RSVP */
@@ -137,6 +139,8 @@ footer p{margin-top:1rem;font-size:.7rem;letter-spacing:.38em;text-transform:upp
   .count div:nth-child(3){border-left:0}
   .count div:nth-child(n+3){border-top:1px solid var(--line)}
   .when i{width:22px}
+  .gallery{--gap:10px}
+  .gallery figure{flex-basis:calc((100% - var(--gap))/2)}
 }
 </style>
 </head>
